@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Commander.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using CommandAPI.Data;
 
 namespace Commander
 {
@@ -26,8 +28,10 @@ namespace Commander
        
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<CommandContext>(opt => opt.UseSqlServer
+            (Configuration.GetConnectionString("CommanderConnection")));
             services.AddControllers();
-            services.AddTransient<ICommanderRepo, MockCommanderRepo>();
+            services.AddTransient<ICommanderRepo, SqlCommandeRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

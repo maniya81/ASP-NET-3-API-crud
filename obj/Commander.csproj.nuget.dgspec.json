@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Sagar\\Personal Git Projects\\Dot Net sample\\Commander\\Commander.csproj": {}
+    "D:\\Sagar\\Personal Git Projects\\ASP-NET-3-API-crud\\Commander.csproj": {}
   },
   "projects": {
-    "D:\\Sagar\\Personal Git Projects\\Dot Net sample\\Commander\\Commander.csproj": {
+    "D:\\Sagar\\Personal Git Projects\\ASP-NET-3-API-crud\\Commander.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Sagar\\Personal Git Projects\\Dot Net sample\\Commander\\Commander.csproj",
+        "projectUniqueName": "D:\\Sagar\\Personal Git Projects\\ASP-NET-3-API-crud\\Commander.csproj",
         "projectName": "Commander",
-        "projectPath": "D:\\Sagar\\Personal Git Projects\\Dot Net sample\\Commander\\Commander.csproj",
+        "projectPath": "D:\\Sagar\\Personal Git Projects\\ASP-NET-3-API-crud\\Commander.csproj",
         "packagesPath": "C:\\Users\\Maniya\\.nuget\\packages\\",
-        "outputPath": "D:\\Sagar\\Personal Git Projects\\Dot Net sample\\Commander\\obj\\",
+        "outputPath": "D:\\Sagar\\Personal Git Projects\\ASP-NET-3-API-crud\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -42,6 +42,22 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
