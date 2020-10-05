@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using CommandAPI.Data;
+using AutoMapper;
 
 namespace Commander
 {
@@ -31,6 +32,7 @@ namespace Commander
             services.AddDbContext<CommandContext>(opt => opt.UseSqlServer
             (Configuration.GetConnectionString("CommanderConnection")));
             services.AddControllers();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddTransient<ICommanderRepo, SqlCommandeRepo>();
         }
 
