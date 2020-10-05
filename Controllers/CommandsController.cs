@@ -53,5 +53,23 @@ namespace Commander.Controllers
            // return Ok(CommandReadDto);
         }
 
+        //put api/command/{id}
+        [HttpPut("{id}")]
+        public ActionResult UpdateCommand(int id, CommandUpdateDto commandUpdateDto)
+        {
+            var commandModelFromRepo = _repo.GetCommandById(id);
+            if(commandModelFromRepo == null )
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(commandUpdateDto, commandModelFromRepo);
+            _repo.UpdateCommand(commandModelFromRepo);
+
+            _repo.SaveChanges();
+
+            return NoContent();
+        }
+
     }
 }
