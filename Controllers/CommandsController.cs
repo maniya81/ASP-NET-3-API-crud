@@ -11,7 +11,7 @@ namespace Commander.Controllers
     [ApiController]
     public class CommandsController : ControllerBase
     {
-        private  readonly ICommanderRepo _repo;
+        private readonly ICommanderRepo _repo;
         private readonly IMapper _mapper;
 
         public CommandsController(ICommanderRepo repo, IMapper mapper){
@@ -83,7 +83,7 @@ namespace Commander.Controllers
             _repo.DeleteCommand(commandModelFromRepo);
             _repo.SaveChanges();
 
-            return NoContent();
+             return Ok("deleted Key");
         }        
 
     }

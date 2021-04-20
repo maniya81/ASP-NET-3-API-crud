@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CommandAPI.Data;
+using Commander.Controllers;
 using Commander.Models;
 
 namespace Commander.Data
@@ -23,8 +24,11 @@ namespace Commander.Data
             }
 
             _context.CommandItems.Add(cmd);
+           
         }
 
+
+   
        public void DeleteCommand(Command cmd)
         {
             if(cmd == null)
